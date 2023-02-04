@@ -1,0 +1,35 @@
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.form input {
+  background-color: var(--dark-bg-color);
+  border: none;
+  outline: none;
+  padding: 12px;
+  border-radius: 5px;
+  color: var(--text-color);
+  font-size: small;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+}
+
+.form input::placeholder {
+  color: var(--light-bg-color);
+}
+
+.select {
+  background-color: var(--dark-bg-color);
+  border: none;
+  outline: none;
+  padding: 11px;
+  border-radius: 5px;
+  color: var(--text-color);
+  font-size: small;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+  width: 270px;
+}
