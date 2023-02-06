@@ -93,14 +93,14 @@ const Countries = () => {
 
   // Ascending, Descending ---->
 
-  const sortData = (order) => {
-    const sortedData = [...countries].sort((a, b) => {
+  const sortCountries = (order) => {
+    const sortedCountries = [...countries].sort((a, b) => {
       if (a.name < b.name) return order === "asc" ? -1 : 1;
       if (a.name > b.name) return order === "asc" ? 1 : -1;
       return 0;
     });
 
-    setCountries(sortedData);
+    setCountries(sortedCountries);
     setSortOrder(order);
   };
 
@@ -116,18 +116,12 @@ const Countries = () => {
     <>
       <Header />
       <div className="country__top">
-        <div className="search">
-          <SearchInput onSearch={getCountryByName} />
-        </div>
-        <div className="filter">
-          <FilterByRegion onSelect={getCountryByRegion} />
-        </div>
-        <div className="filter">
-          <FilterByArea onSelect={getCountryByArea} />
-        </div>
+        <SearchInput onSearch={getCountryByName} />
+        <FilterByRegion onSelect={getCountryByRegion} />
+        <FilterByArea onSelect={getCountryByArea} />
       </div>
 
-      <select value={sortOrder} onChange={(e) => sortData(e.target.value)}>
+      <select value={sortOrder} onChange={(e) => sortCountries(e.target.value)}>
         <option value="asc">Ascending</option>
         <option value="desc">Descending</option>
       </select>
